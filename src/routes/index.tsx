@@ -105,7 +105,7 @@ function Index() {
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
             <div className="animate-fade-up" style={{ animationDelay: "1.4s" }}><Status /></div>
             <p className="eyebrow animate-fade-up mt-10" style={{ animationDelay: "1.6s" }}>The next chapter of Vara [Offstage]</p>
-            <h1 className="font-wide animate-fade-up mt-5 max-w-5xl text-5xl uppercase leading-[0.92] sm:text-7xl lg:text-8xl" style={{ animationDelay: "1.75s" }}>
+            <h1 className="font-wide animate-fade-up mt-5 max-w-5xl text-[10.5vw] uppercase leading-[0.92] sm:text-7xl lg:text-8xl" style={{ animationDelay: "1.75s" }}>
               The room was just the <span className="text-primary text-glow">beginning.</span>
             </h1>
             <div className="animate-fade-up mt-8 grid max-w-4xl gap-4 md:grid-cols-2" style={{ animationDelay: "1.95s" }}>
