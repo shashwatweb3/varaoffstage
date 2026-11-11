@@ -149,12 +149,20 @@ body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 @keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .3; transform: scale(.7); } }
 @keyframes bar { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
+@keyframes developer-enter { from { opacity: 0; } to { opacity: 1; } }
 
 .animate-curtain-left { animation: curtain-left 1.6s cubic-bezier(.7,0,.2,1) .3s forwards; }
 .animate-curtain-right { animation: curtain-right 1.6s cubic-bezier(.7,0,.2,1) .3s forwards; }
 .animate-fade-up { opacity: 0; animation: fade-up .9s ease-out forwards; }
 .animate-pulse-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
 .animate-bar { animation: bar 1.8s ease-in-out infinite; }
+.portal-developer {
+  --developer-x: 0px;
+  --developer-y: 0px;
+  transform: translate(calc(-50% + var(--developer-x)), calc(-50% + var(--developer-y)));
+  filter: drop-shadow(0 0 24px color-mix(in oklab, var(--primary) 28%, transparent));
+  animation: developer-enter 1.4s ease-out 1.9s both;
+}
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 

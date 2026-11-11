@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import developer from "@/assets/offstage-developer.png";
 
 type Star = { x: number; y: number; size: number; alpha: number; phase: number; depth: number };
 type Particle = { radius: number; angle: number; speed: number; size: number; alpha: number; hot: boolean };
@@ -15,6 +16,7 @@ function seededRandom(seed: number) {
 
 export function BlackHolePortal() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const developerRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -163,6 +165,8 @@ export function BlackHolePortal() {
       const time = reducedMotion ? 0 : timestamp / 1000;
       pointer.x += (pointer.targetX - pointer.x) * 0.035;
       pointer.y += (pointer.targetY - pointer.y) * 0.035;
+      developerRef.current?.style.setProperty("--developer-x", `${pointer.x * 18}px`);
+      developerRef.current?.style.setProperty("--developer-y", `${pointer.y * 13}px`);
 
       context.clearRect(0, 0, width, height);
       context.fillStyle = colors.background;
@@ -250,5 +254,17 @@ export function BlackHolePortal() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 h-full w-full" />;
+  return (
+    <div className="pointer-events-none absolute inset-0">
+      <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 h-full w-full" />
+      <img
+        ref={developerRef}
+        src={developer}
+        alt=""
+        width={1024}
+        height={1024}
+        className="portal-developer absolute left-[57%] top-[29%] h-[31vh] w-auto object-contain md:left-[69%] md:top-[35%] md:h-[46vh]"
+      />
+    </div>
+  );
 }
