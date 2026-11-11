@@ -99,9 +99,10 @@ function Index() {
       <main id="main">
         {/* HERO */}
         <section id="top" className="grain relative flex min-h-svh items-end overflow-hidden pb-20 pt-32">
-          <img src={hero} alt="" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/70" />
-          <div className="relative mx-auto w-full max-w-7xl px-6">
+          <BlackHolePortal />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/30 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/10 to-background/35" />
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
             <div className="animate-fade-up" style={{ animationDelay: "1.4s" }}><Status /></div>
             <p className="eyebrow animate-fade-up mt-10" style={{ animationDelay: "1.6s" }}>The next chapter of Vara [Offstage]</p>
             <h1 className="font-wide animate-fade-up mt-5 max-w-5xl text-5xl uppercase leading-[0.92] sm:text-7xl lg:text-8xl" style={{ animationDelay: "1.75s" }}>
