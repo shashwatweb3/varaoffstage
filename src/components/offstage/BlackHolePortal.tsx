@@ -159,7 +159,7 @@ export function BlackHolePortal() {
       context.restore();
     };
 
-    function draw(timestamp: number) {
+    const draw = (timestamp: number) => {
       const time = reducedMotion ? 0 : timestamp / 1000;
       pointer.x += (pointer.targetX - pointer.x) * 0.035;
       pointer.y += (pointer.targetY - pointer.y) * 0.035;
@@ -235,7 +235,7 @@ export function BlackHolePortal() {
       context.fill();
 
       if (!reducedMotion) frame = requestAnimationFrame(draw);
-    }
+    };
 
     const observer = new ResizeObserver(resize);
     observer.observe(canvas);
