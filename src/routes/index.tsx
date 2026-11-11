@@ -5,6 +5,7 @@ import { NAV, SOCIAL_LINKS, VARA_NETWORK_URL } from "@/config/site";
 import { SignupForm } from "@/components/offstage/SignupForm";
 import { Reveal } from "@/components/offstage/Reveal";
 import { Wordmark } from "@/components/offstage/Wordmark";
+import { BlackHolePortal } from "@/components/offstage/BlackHolePortal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
